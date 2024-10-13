@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            color: #ff6347;
+        }
+        #game-section {
+            margin-top: 50px;
+        }
+        .button {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #invitation {
+            margin-top: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Happy Birthday, [Name]!</h1>
+    <p>I have a fun surprise for you! 🎉</p>
+    
+    <!-- Game Section -->
+    <div id="game-section">
+        <p>Click the button below to play a quick game.</p>
+        <button class="button" onclick="startGame()">Start Game</button>
+        <div id="result"></div>
+    </div>
+
+    <!-- Invitation Section (Hidden at First) -->
+    <div id="invitation">
+        <h2>Will You Go On A Date With Me? 💕</h2>
+        <button class="button" onclick="revealAnswer()">YES 💖</button>
+    </div>
+</div>
+
+<script>
+    function startGame() {
+        document.getElementById('result').innerHTML = "Solve this! What's 7 + 5?";
+        setTimeout(() => {
+            let answer = prompt("What's 7 + 5?");
+            if (answer == 12) {
+                document.getElementById('result').innerHTML = "Correct! You won! 🎉";
+                document.getElementById('invitation').style.display = "block";
+            } else {
+                document.getElementById('result').innerHTML = "Oops, try again!";
+            }
+        }, 1000);
+    }
+
+    function revealAnswer() {
+        alert("Yay! Can't wait for our date! 😍");
+    }
+</script>
+
+</body>
+</html>
